@@ -1,0 +1,20 @@
+<div class="container">
+  <input type="checkbox" id="check">
+  <div class="login form">
+    <header>Cadastro</header>
+    <form #form="ngForm" (ngSubmit)="cadastro(form)">
+      <input type="text" placeholder="Digite o seu Nome"  name="nome" ngModel>
+      <input type="text" placeholder="Digite o seu sobrenome"  name="sobrenome"  ngModel>
+      <input type="text" placeholder="Digite o seu cpf"  name="cpf" ngModel>
+      <input type="text" placeholder="Digite a sua idade"  name="idade"  ngModel>
+      <input type="text" placeholder="Digite o seu Endereço"  name="endereco" ngModel>
+      
+     <input type="submit" class="button" [value]="nameButton">
+    </form>
+    <div class="signup">
+      <span class="signup" >Você ja tem conta?
+       <label for="check"><a routerLink="/Login">Login</a></label>
+      </span>
+    </div>
+  </div>
+  </div>

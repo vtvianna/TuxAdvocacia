@@ -1,0 +1,32 @@
+<div *ngFor="let info of infoCadastro">
+  <hr>
+  <p><strong>Nome: </strong>{{info.nome}}</p>
+  <p><strong>Sobrenome: </strong>{{info.sobrenome}}</p>
+  <p><strong>Cpf: </strong>{{info.cpf}}</p>
+  <p><strong>Idade: </strong>{{info.idade}}</p>
+  <p><strong>Endereço: </strong>{{info.endereco}}</p>
+  
+</div>
+
+
+<div>
+  <button (click)="alternarExibicaoClientesMais60()">
+    {{ mostrarClientesMais60 ? 'Mostrar todos os clientes' : 'Mostrar clientes com mais de 60 anos' }}
+  </button>
+</div>
+
+
+<div *ngIf="mostrarClientesMais60">
+  <h2>Clientes com mais de 60 anos:</h2>
+  <div *ngFor="let info of clientesFiltrados">
+    <h2>{{ info.nome }}</h2>
+    <p>ID: {{ info.id }}</p>
+    <p>CPF: {{ info.cpf }}</p>
+    <p>Idade: {{ info.idade }}</p>
+    <p>Endereço: {{ info.endereco }}</p>
+  </div>
+</div>
+
+<div *ngIf="mostrarClientesMais60 && clientesFiltrados.length === 0">
+  <p>Não existem clientes acima de 60 anos</p>
+</div>

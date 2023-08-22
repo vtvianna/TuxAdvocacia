@@ -1,0 +1,15 @@
+<div class="container">
+ <img class="foto" src="./assets/fotos/lady-justice-2388500_1920.jpg">
+</div>
+
+
+<div class="container" *ngFor="let imagem of imgDois"> 
+    <div class="card" style="width: 18rem; float:left">
+        <img class="card-img-top" [src]="imagem.url" alt="Imagem de capa do card">
+        <div class="card-body">
+          <h5 class="card-title">{{imagem.nome}}</h5>
+          <p class="card-text">Membros da empresa Tux Advocacia.</p>         
+        </div>
+      </div>
+</div>
+
